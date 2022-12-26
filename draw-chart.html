@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        function drawRectangle(x,y,base,height, color){
+
+            var screen = document.querySelector("canvas");
+            var brush =  screen.getContext("2d");
+
+            brush.fillStyle = color;
+            brush.fillRect(x,y,base,height);
+
+            brush.strokeStyle = "black";
+            brush.strokeRect(x,y,base,height);
+        }
+
+        function writeText(x,y,text){
+            var screen = document.querySelector("canvas");
+            var brush = screen.getContext("2d");
+
+            brush.font="15px Georgia";
+            brush.fillStyle = "black";
+            brush.fillText(text,x,y);
+        }
+
+        var serie2009 = [6,47,41,3,3];
+        var serie2019 = [81,9,3,3,4];
+        var colors = ["blue","green","yellow","red","gray"];
+
+        function drawBar(x,y,serie,colors,text){
+
+            writeText(x,y-10,text);
+
+            var addHeight = 0;
+
+            for (let index = 0; index < serie.length; index++) {
+
+                var height = serie[index]
+
+                drawRectangle(x,y+addHeight,50,height,colors[index]);
+
+                addHeight = addHeight + height;
+                
+            }
+
+        }
+
+        drawBar(60,50,serie2009,colors,"2009");
+        drawBar(160,50,serie2019,colors,"2019");
+
+
+    </script>
+</body>
+</html>

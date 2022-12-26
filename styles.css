@@ -1,0 +1,30 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Moserrat', sans-serif;
+}
+
+nav{
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 5%;
+    background: linear-gradient(#ccc, white);
+    text-align: center;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px dashed;
+    border-radius: 4px 20px;
+    width: 25%;
+    margin: 0 auto; 
+    text-align: left;   
+}
+
+ul li a{
+    font-weight: bold;
+    font-size: 20px;
+    color: orange;
+}
